@@ -1,4 +1,3 @@
-import turtle
 import math
 from turtle import *
 
@@ -12,8 +11,9 @@ draw_rhombus = None
 draw_triangle = None
 draw_polygon = None
 
-#---2d shapes----------------------------------------------------------------------------------------
-#---Rectangle----------------------------------------------------------------------------------------
+
+# ---2d shapes----------------------------------------------------------------------------------------
+# ---Rectangle----------------------------------------------------------------------------------------
 def rectangle():
     length, height, area = 0, 0, 0
     while True:
@@ -50,7 +50,7 @@ def rectangle():
     print("Length: " + str(round(length, 2)))
     print("Height: " + str(round(height, 2)))
     print("Area: " + str(round(area, 2)))
-  
+
     begin_fill()
     color('red', 'yellow')
     for x in range(4):
@@ -61,7 +61,7 @@ def rectangle():
         restart()
 
 
-#---Circle----------------------------------------------------------------------------------------
+# ---Circle----------------------------------------------------------------------------------------
 
 
 def circle_shape():
@@ -88,16 +88,16 @@ def circle_shape():
         radius = (math.sqrt(area / math.pi))
     print("Area: " + str(round(area, 2)))
     print("Radius: " + str(round(radius, 2)))
-  
+
     color('red', 'yellow')
     begin_fill()
     circle(50)
     end_fill()
-  
+
     restart()
 
 
-#---Triangle----------------------------------------------------------------------------------------
+# ---Triangle----------------------------------------------------------------------------------------
 
 
 def triangle():
@@ -136,7 +136,7 @@ def triangle():
     print("Base: " + str(round(base, 2)))
     print("Height: " + str(round(height, 2)))
     print("Area: " + str(round(area, 2)))
-  
+
     begin_fill()
     color('red', 'yellow')
     for x in range(3):
@@ -147,24 +147,24 @@ def triangle():
         restart()
 
 
-#---Rhombus----------------------------------------------------------------------------------------
+# ---Rhombus----------------------------------------------------------------------------------------
 
 
 def rhombus():
-    diagonalA, diagonalB, area = 0, 0, 0
+    diagonal_a, diagonal_b, area = 0, 0, 0
     while True:
         try:
-            diagonalA = float(input("Insert the first diagonal: "))
+            diagonal_a = float(input("Insert the first diagonal: "))
         except:
             print("Input valid number.")
         else:
             break
     while True:
         try:
-            diagonalB = float(input("Insert the second diagonal: "))
+            diagonal_b = float(input("Insert the second diagonal: "))
         except:
             print("Input valid number.")
-        if diagonalA == 0 and diagonalB == 0:
+        if diagonal_a == 0 and diagonal_b == 0:
             print("Input more non-zero numbers.")
         else:
             break
@@ -173,20 +173,20 @@ def rhombus():
             area = float(input("Insert area: "))
         except:
             print("Input valid number.")
-        if diagonalA == 0 and area == 0 or diagonalB == 0 and area == 0:
+        if diagonal_a == 0 and area == 0 or diagonal_b == 0 and area == 0:
             print("Input more non-zero numbers.")
         else:
             break
-    if diagonalA == 0:
-        diagonalA = (2 * (area / diagonalB))
-    if diagonalB == 0:
-        diagonalB = (2 * (area / diagonalA))
+    if diagonal_a == 0:
+        diagonal_a = (2 * (area / diagonal_b))
+    if diagonal_b == 0:
+        diagonal_b = (2 * (area / diagonal_a))
     if area == 0:
-        area = ((diagonalA * diagonalB) / 2)
-    print("First diagonal: " + str(round(diagonalA, 2)))
-    print("Second diagonal: " + str(round(diagonalB, 2)))
+        area = ((diagonal_a * diagonal_b) / 2)
+    print("First diagonal: " + str(round(diagonal_a, 2)))
+    print("Second diagonal: " + str(round(diagonal_b, 2)))
     print("Area: " + str(round(area, 2)))
-  
+
     begin_fill()
     color('red', 'yellow')
     left(45)
@@ -198,28 +198,28 @@ def rhombus():
     left(90)
     forward(100)
     end_fill()
-  
+
     restart()
 
 
-#---Trapezoid----------------------------------------------------------------------------------------
+# ---Trapezoid----------------------------------------------------------------------------------------
 
 
 def trapezoid():
-    baseA, baseB, height, area = 0, 0, 0, 0
+    base_a, base_b, height, area = 0, 0, 0, 0
     while True:
         try:
-            baseA = float(input("Insert first base: "))
+            base_a = float(input("Insert first base: "))
         except:
-            print("Inuput valid number.")
+            print("Input valid number.")
         else:
             break
     while True:
         try:
-            baseB = float(input("Insert second base: "))
+            base_b = float(input("Insert second base: "))
         except:
-            print("Inuput valid number.")
-        if baseA == 0 and baseB == 0:
+            print("Input valid number.")
+        if base_a == 0 and base_b == 0:
             print("Input more non-zero numbers.")
         else:
             break
@@ -227,8 +227,8 @@ def trapezoid():
         try:
             height = float(input("Insert height: "))
         except:
-            print("Inuput valid number.")
-        if baseA == 0 and height == 0 or baseB == 0 and height == 0:
+            print("Input valid number.")
+        if base_a == 0 and height == 0 or base_b == 0 and height == 0:
             print("Input more non-zero numbers.")
         else:
             break
@@ -237,23 +237,23 @@ def trapezoid():
             area = float(input("Insert area: "))
         except:
             print("Input valid number.")
-        if baseA == 0 and area == 0 or baseB == 0 and area == 0 or height == 0 and area == 0:
+        if base_a == 0 and area == 0 or base_b == 0 and area == 0 or height == 0 and area == 0:
             print("Input more non-zero numbers.")
         else:
             break
-    if baseA == 0:
-        baseA = (2 * (area / height) - baseB)
-    if baseB == 0:
-        baseB = (2 * (area / height) - baseA)
+    if base_a == 0:
+        base_a = (2 * (area / height) - base_b)
+    if base_b == 0:
+        base_b = (2 * (area / height) - base_a)
     if height == 0:
-        height = (2 * (area / (baseA * baseB)))
+        height = (2 * (area / (base_a * base_b)))
     if area == 0:
-        area = (height * (baseA + baseB) / 2)
-    print("First base: " + str(round(baseA, 2)))
-    print("Second base: " + str(round(baseB, 2)))
+        area = (height * (base_a + base_b) / 2)
+    print("First base: " + str(round(base_a, 2)))
+    print("Second base: " + str(round(base_b, 2)))
     print("Height: " + str(round(height, 2)))
     print("Area: " + str(round(area, 2)))
-  
+
     begin_fill()
     color('red', 'yellow')
     forward(180)
@@ -264,11 +264,11 @@ def trapezoid():
     left(60)
     forward(80)
     end_fill()
-  
+
     restart()
 
 
-#---Polygon----------------------------------------------------------------------------------------
+# ---Polygon----------------------------------------------------------------------------------------
 
 
 def polygon():
@@ -293,7 +293,7 @@ def polygon():
     apothem = (side_length / (2 * math.tan(math.pi / side_num)))
     area = (perimeter * apothem * 0.5)
     print("Area: " + str(round(area, 2)))
-    
+
     begin_fill()
     color('red', 'yellow')
     for x in range(side_num):
@@ -304,8 +304,8 @@ def polygon():
         restart()
 
 
-#---3d shapes----------------------------------------------------------------------------------------
-#---Rectangular prism----------------------------------------------------------------------------------------
+# ---3d shapes----------------------------------------------------------------------------------------
+# ---Rectangular prism----------------------------------------------------------------------------------------
 
 
 def rectangular_prism():
@@ -379,7 +379,7 @@ def rectangular_prism():
     restart()
 
 
-#---Cone----------------------------------------------------------------------------------------
+# ---Cone----------------------------------------------------------------------------------------
 
 
 def cone():
@@ -421,33 +421,33 @@ def cone():
     print("Height: " + str(round(height, 2)))
     print("Volume: " + str(round(volume, 2)))
     print("Surface area: " + str(round(sur_area, 2)))
-  
+
     color('red', 'yellow')
     penup()
     setx(-50)
     sety(40)
     left(270)
     pendown()
-    circle(50,180)
+    circle(50, 180)
     penup()
     setx(45)
     pendown()
     for x in range(10):
-      dot()
-      penup()
-      circle(45,20)
-      pendown()
+        dot()
+        penup()
+        circle(45, 20)
+        pendown()
     penup()
     setx(50)
     sety(40)
     pendown()
-    goto(0,150)
-    goto(-50,40)
-  
+    goto(0, 150)
+    goto(-50, 40)
+
     restart()
 
 
-#---Pyramid----------------------------------------------------------------------------------------
+# ---Pyramid----------------------------------------------------------------------------------------
 
 
 def pyramid():
@@ -502,34 +502,35 @@ def pyramid():
     print("Width: " + str(round(width, 2)))
     print("Volume: " + str(round(volume, 2)))
     print("Surface area: " + str(round(sur_area, 2)))
-  
+
     color('red', 'yellow')
     left(90)
     forward(100)
     left(160)
     forward(90)
-    goto(0,0)
+    goto(0, 0)
     right(160)
     forward(100)
     right(160)
     forward(90)
-    goto(0,0)
+    goto(0, 0)
     left(160)
     forward(100)
     left(160)
     forward(90)
-    goto(0,30)
+    goto(0, 30)
     right(160)
     forward(70)
     right(160)
     forward(90)
-    goto(0,30)
+    goto(0, 30)
     penup()
-    goto(200,200)
-  
+    goto(200, 200)
+
     restart()
-  
-#---Sphere----------------------------------------------------------------------------------------
+
+
+# ---Sphere----------------------------------------------------------------------------------------
 
 
 def sphere():
@@ -565,28 +566,28 @@ def sphere():
     goto(-48, 40)
     left(-55)
     pendown()
-    circle(62,90)
-    circle(30,90)
+    circle(62, 90)
+    circle(30, 90)
     penup()
     left(-20.5)
     goto(48, 38)
     pendown()
     penup()
-    circle(60,10)
-    circle(40,9.5)
+    circle(60, 10)
+    circle(40, 9.5)
     pendown()
     for x in range(7):
-      dot()
-      penup()
-      circle(60,10)
-      circle(40,9.5)
-      pendown()
+        dot()
+        penup()
+        circle(60, 10)
+        circle(40, 9.5)
+        pendown()
     seth(-45)
-  
+
     restart()
 
 
-#---Cylinder----------------------------------------------------------------------------------------
+# ---Cylinder----------------------------------------------------------------------------------------
 
 
 def cylinder():
@@ -634,45 +635,45 @@ def cylinder():
     pendown()
     circle(50)
     penup()
-    goto(-50,20)
+    goto(-50, 20)
     pendown()
     penup()
     goto(-50, 70)
     pendown()
-    goto(-50,-65)
+    goto(-50, -65)
     penup()
     goto(0, 30)
     pendown()
     circle(50)
     penup()
-    goto(50,50)
+    goto(50, 50)
     pendown()
     penup()
     goto(50, 70)
     pendown()
-    goto(50,-65)
-  
+    goto(50, -65)
+
     restart()
 
 
-#---Donut----------------------------------------------------------------------------------------
+# ---Donut----------------------------------------------------------------------------------------
 
 
 def donut():
-    minorRadius, majorRadius, volume = 0, 0, 0
+    minor_radius, major_radius, volume = 0, 0, 0
     while True:
         try:
-            minorRadius = float(input("Insert minor radius: "))
+            minor_radius = float(input("Insert minor radius: "))
         except:
             print("Input valid number.")
         else:
             break
     while True:
         try:
-            majorRadius = float(input("Insert major radius: "))
+            major_radius = float(input("Insert major radius: "))
         except:
             print("Input valid number.")
-        if minorRadius == 0 and majorRadius == 0:
+        if minor_radius == 0 and major_radius == 0:
             print("Input more non-zero numbers.")
         else:
             break
@@ -680,52 +681,53 @@ def donut():
         try:
             volume = float(input("Insert volume: "))
         except:
-            print("Input valid number.") 
-        if minorRadius == 0 and volume == 0 or majorRadius == 0 and volume == 0:
+            print("Input valid number.")
+        if minor_radius == 0 and volume == 0 or major_radius == 0 and volume == 0:
             print("Input more non-zero numbers.")
         else:
             break
-    if minorRadius == 0:
-        minorRadius = ((math.sqrt(volume / 2 * majorRadius) / math.pi))
-    if majorRadius == 0:
-        majorRadius = ((1 / 2) * volume * pow(1 / (math.pi * radius), 2))
+    if minor_radius == 0:
+        minor_radius = (math.sqrt(volume / 2 * major_radius) / math.pi)
+    if major_radius == 0:
+        major_radius = (1 / 2) * volume * pow(1 / (math.pi * minor_radius), 2)
     if volume == 0:
-        volume = ((math.pi * pow(minorRadius, 2)) * (2 * math.pi * majorRadius))
-    sur_area = ((2 * math.pi * majorRadius) * (2 * math.pi * minorRadius))
-    print("Minor radius: " + str(round(minorRadius, 2)))
-    print("Major radius: " + str(round(majorRadius, 2)))
+        volume = (math.pi * pow(minor_radius, 2)) * (2 * math.pi * major_radius)
+    sur_area = ((2 * math.pi * major_radius) * (2 * math.pi * minor_radius))
+    print("Minor radius: " + str(round(minor_radius, 2)))
+    print("Major radius: " + str(round(major_radius, 2)))
     print("Volume: " + str(round(volume, 2)))
     print("Surface area: " + str(round(sur_area, 2)))
-  
+
     speed(60)
     for x in range(35):
-      color('red', 'yellow')
-      circle(50)
-      left(53) 
-      forward(x/50+20)
-      x += 2
+        color('red', 'yellow')
+        circle(50)
+        left(53)
+        forward(x / 50 + 20)
+        x += 2
     else:
-      restart()
+        restart()
 
 
-#---Restart----------------------------------------------------------------------------------------
+# ---Restart----------------------------------------------------------------------------------------
 
 
 def restart():
     x = str(input("Would you like to restart? Y or N: "))
-    if (x.__eq__("Y") or x.__eq__("y") or x.__eq__("yes") or x.__eq__("Yes")):
+    if x.__eq__("Y") or x.__eq__("y") or x.__eq__("yes") or x.__eq__("Yes"):
         reset()
         main()
     else:
         print("Thank you for using DIM")
 
-  
-#---Main----------------------------------------------------------------------------------------
+
+# ---Main----------------------------------------------------------------------------------------
 
 
 def main():
     print(
-        "If you don't know a value just put 0 as a place holder, also all final values have been rounded up for less confusion."
+        "If you don't know a value just put 0 as a place holder,"
+        " also all final values have been rounded up for less confusion."
     )
     print(
         "Type a 0 for two dimensional shapes.\nType a 1 for three dimensional shapes."
@@ -738,57 +740,60 @@ def main():
         else:
             break
 
+    # ---2d and 3d selections----------------------------------------------------------------------------------------
 
-#---2d and 3d selections----------------------------------------------------------------------------------------
-
-    if (shape_dim == 0):
+    if shape_dim == 0:
         while True:
             try:
                 two_dim = int(
                     input(
-                        "Choose a shape: \n0: Rectangle\n1: Circle\n2: Triangle\n3: Rhombus\n4: Trapezoid\n5: Regular polygon\nChoice: "
+                        "Choose a shape: \n0: Rectangle\n1: Circle\n2: Triangle\n3: Rhombus\n"
+                        "4: Trapezoid\n5: Regular polygon\nChoice: "
                     ))
             except:
                 print("Choose a valid shape.")
             else:
-                if (two_dim == 0):
+                if two_dim == 0:
                     rectangle()
-                elif (two_dim == 1):
+                elif two_dim == 1:
                     circle_shape()
-                elif (two_dim == 2):
+                elif two_dim == 2:
                     triangle()
-                elif (two_dim == 3):
+                elif two_dim == 3:
                     rhombus()
-                elif (two_dim == 4):
+                elif two_dim == 4:
                     trapezoid()
-                elif (two_dim == 5):
+                elif two_dim == 5:
                     polygon()
                 break
-    elif (shape_dim == 1):
+    elif shape_dim == 1:
         while True:
             try:
                 three_dim = int(
                     input(
-                        "Choose a shape: \n0: Rectangular prism\n1: Cone\n2: Pyramid\n3: Sphere\n4: Cylinder\n5: Donut\nChoice: "
+                        "Choose a shape: \n0: Rectangular prism\n1: Cone\n2: Pyramid\n3: Sphere"
+                        "\n4: Cylinder\n5: Donut\nChoice: "
                     ))
             except:
                 print("Choose a valid shape.")
             else:
-                if (three_dim == 0):
+                if three_dim == 0:
                     rectangular_prism()
-                elif (three_dim == 1):
+                elif three_dim == 1:
                     cone()
-                elif (three_dim == 2):
+                elif three_dim == 2:
                     pyramid()
-                elif (three_dim == 3):
+                elif three_dim == 3:
                     sphere()
-                elif (three_dim == 4):
+                elif three_dim == 4:
                     cylinder()
-                elif (three_dim == 5):
+                elif three_dim == 5:
                     donut()
                 break
     else:
         print("Please choose a valid shape.")
         main()
     reset()
+
+
 main()
