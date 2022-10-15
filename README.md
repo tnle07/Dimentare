@@ -8,3 +8,5 @@ Only 1 missing value can be solved for.
 Turtle will proceed to draw shape.
 Program finishes with a Y or N prompt to restart.
 Restarts if Y. Otherwise, screen closes and project halts.
+
+Made by Tony Le, Andrea Francisco, and Naimur Abir. 
