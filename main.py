@@ -3,15 +3,6 @@ from turtle import *
 
 Turtle()
 
-side_num = 0
-draw_rectangle = None
-draw_circle = None
-draw_trapezoid = None
-draw_rhombus = None
-draw_triangle = None
-draw_polygon = None
-
-
 # ---2d shapes----------------------------------------------------------------------------------------
 # ---Rectangle----------------------------------------------------------------------------------------
 def rectangle():
@@ -272,7 +263,7 @@ def trapezoid():
 
 
 def polygon():
-    side_length, area = 0, 0
+    side_length, side_num, area = 0, 0, 0
     while True:
         try:
             side_num = int(input("Insert number of sides: "))
