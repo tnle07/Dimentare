@@ -1,4 +1,4 @@
-# Dimentare-3.0
+# Dimentare
 A shape calculator with Turtle graphics
 
 Input 0 or 1 for 2D or 3D shapes, respectively.
